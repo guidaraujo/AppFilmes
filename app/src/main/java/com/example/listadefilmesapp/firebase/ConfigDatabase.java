@@ -6,8 +6,10 @@ import com.google.firebase.database.FirebaseDatabase;
 
 public class ConfigDatabase {
 
-    public FirebaseAuth auth = FirebaseAuth.getInstance();
-    public DatabaseReference reference = FirebaseDatabase.getInstance().getReference();
+    public static final FirebaseAuth AUTH = FirebaseAuth.getInstance();
+    public static final DatabaseReference REFERENCE = FirebaseDatabase.getInstance().getReference();
+
+    public String sUrl;
 
     
 

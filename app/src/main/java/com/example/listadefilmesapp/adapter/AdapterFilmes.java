@@ -4,10 +4,12 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.listadefilmesapp.R;
 import com.example.listadefilmesapp.model.Filmes;
+import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
@@ -45,6 +47,7 @@ public class AdapterFilmes extends RecyclerView.Adapter<AdapterFilmes.MyViewHold
 
         Filmes filmes = filmeslista.get(position);
 
+        //Picasso.get().load().into(holder.capa);
         holder.titulo.setText(filmes.getTitulo());
         holder.genero.setText(filmes.getGenero());
         holder.ano.setText(filmes.getAno());
@@ -61,10 +64,12 @@ public class AdapterFilmes extends RecyclerView.Adapter<AdapterFilmes.MyViewHold
     public class MyViewHolder extends RecyclerView.ViewHolder {
 
         TextView titulo, ano, genero;
+        ImageView capa;
 
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
 
+            capa = itemView.findViewById(R.id.imgCapa);
             titulo = itemView.findViewById(R.id.txtTitulo);
             genero = itemView.findViewById(R.id.txtGen);
             ano = itemView.findViewById(R.id.txtAno);

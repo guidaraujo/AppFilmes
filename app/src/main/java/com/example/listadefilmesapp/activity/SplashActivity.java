@@ -35,7 +35,7 @@ public class SplashActivity extends AppCompatActivity {
                      * Caso esteja, ele chama a MainActivity
                      * Caso não esteja, chama a LoginActivity
                      **/
-                    if (configDatabase.auth.getCurrentUser()!=null){
+                    if (configDatabase.AUTH.getCurrentUser()!=null){
 
                         Intent intent = new Intent(SplashActivity.this, MainActivity.class);
                         startActivity(intent);

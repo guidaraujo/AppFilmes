@@ -91,7 +91,7 @@ public class CadastroActivity extends AppCompatActivity {
         database = new ConfigDatabase();
 
         /** Cria um usuário com email e senha**/
-        database.auth.createUserWithEmailAndPassword(email, senha)
+        database.AUTH.createUserWithEmailAndPassword(email, senha)
                 .addOnCompleteListener(CadastroActivity.this, new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {

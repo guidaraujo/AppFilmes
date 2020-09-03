@@ -69,7 +69,7 @@ public class LoginActivity extends AppCompatActivity {
         configDatabase = new ConfigDatabase();
 
         /** Realiza o login com email e senha **/
-        configDatabase.auth.signInWithEmailAndPassword(email, senha).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+        configDatabase.AUTH.signInWithEmailAndPassword(email, senha).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
 

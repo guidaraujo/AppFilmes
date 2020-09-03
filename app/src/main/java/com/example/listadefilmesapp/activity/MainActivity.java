@@ -37,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
 
     private ConfigDatabase database = new ConfigDatabase();
 
-    private DatabaseReference reference = database.reference.child("filmes");
+    private DatabaseReference reference = database.REFERENCE.child("filmes");
     private DatabaseReference referenciaUid;
     private ChildEventListener childEventListener;
     private Filmes filmeSelecionado;
@@ -57,7 +57,7 @@ public class MainActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
 
         /** Variável do tipo FirebaseUser que recebe o id do usuário **/
-        FirebaseUser user = database.auth.getCurrentUser();
+        FirebaseUser user = database.AUTH.getCurrentUser();
 
         /** String que recebe o id do usuário **/
         id = user.getUid();
@@ -229,7 +229,7 @@ public class MainActivity extends AppCompatActivity {
         dialog.setPositiveButton("Sim", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
-                database.auth.signOut();
+                database.AUTH.signOut();
                 Intent intent = new Intent(MainActivity.this, LoginActivity.class);
                 startActivity(intent);
                 finish();

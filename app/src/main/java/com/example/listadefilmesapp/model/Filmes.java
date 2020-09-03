@@ -1,9 +1,19 @@
 package com.example.listadefilmesapp.model;
 
+import android.widget.ImageView;
+
 import java.io.Serializable;
 
 public class Filmes implements Serializable {
-    public String titulo, genero, ano, id;
+    public String titulo, genero, ano, id, url;
+
+    public String getUrl() {
+        return url;
+    }
+
+    public void setUrl(String url) {
+        this.url = url;
+    }
 
     public String getTitulo() {
         return titulo;
