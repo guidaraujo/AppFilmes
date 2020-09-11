@@ -24,6 +24,7 @@ import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.os.Handler;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -113,10 +114,20 @@ public class MainActivity extends AppCompatActivity {
     }
 
     @Override
+    protected void onRestart() {
+        super.onRestart();
+        /** Chama o método de carregar a lista toda vez que o onRestart é chamado **/
+
+
+        carregarLista();
+    }
+
+    @Override
     protected void onStart() {
 
         super.onStart();
         /** Chama o método de carregar a lista toda vez que o onStart é chamado **/
+
         carregarLista();
 
 

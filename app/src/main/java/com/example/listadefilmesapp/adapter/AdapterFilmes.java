@@ -18,7 +18,8 @@ import androidx.recyclerview.widget.RecyclerView;
 
 /** Classe de adapter que extende a subclasse MyViewHolder **/
 public class AdapterFilmes extends RecyclerView.Adapter<AdapterFilmes.MyViewHolder> {
-    private Filmes filmes;
+
+    private static final String DEFAULT_IMAGE= "https://www.meirellesmilare.com.br/wp-content/themes/cardinal/images/default-thumb.png";
 
     private Context context;
 
@@ -47,7 +48,17 @@ public class AdapterFilmes extends RecyclerView.Adapter<AdapterFilmes.MyViewHold
 
         Filmes filmes = filmeslista.get(position);
 
-        //Picasso.get().load().into(holder.capa);
+        if (filmes.url==null){
+
+            Picasso.get()
+                    .load(DEFAULT_IMAGE)
+                    .into(holder.capa);
+
+        }
+
+
+
+        Picasso.get().load(filmes.getUrl()).resize(864, 1280).into(holder.capa);
         holder.titulo.setText(filmes.getTitulo());
         holder.genero.setText(filmes.getGenero());
         holder.ano.setText(filmes.getAno());

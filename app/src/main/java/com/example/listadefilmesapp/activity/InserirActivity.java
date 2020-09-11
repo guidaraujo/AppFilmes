@@ -10,8 +10,11 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.inputmethod.EditorInfo;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.listadefilmesapp.R;
@@ -34,6 +37,7 @@ public class InserirActivity extends AppCompatActivity {
 
     private Retrofit retrofit;
 
+    /** Constantes com dados para query da API de pesquisa **/
     private static final String BASE_URL = "https://www.googleapis.com/customsearch/";
     private static final String KEY = "AIzaSyCKM2xSlNUpybQeS_Hx97-IUTOm7G_t8fw";
     private static final String CX = "585630a4f613ff306";
@@ -85,6 +89,24 @@ public class InserirActivity extends AppCompatActivity {
             genero.setText(filmeAtual.getGenero());
             ano.setText(filmeAtual.getAno());
         }
+        ano.setOnEditorActionListener(new TextView.OnEditorActionListener() {
+            @Override
+            public boolean onEditorAction(TextView textView, int i, KeyEvent keyEvent) {
+                boolean test = false;
+                if (i== EditorInfo.IME_ACTION_DONE){
+
+                    sNome = nome.getText().toString();
+
+                    /** Chama o método para buscar url da imagem de capa (poster) com base no titulo do filme
+                     * Passa o id do usuário logado e o titulo do filme que o usuario digitou **/
+                    recuperarCapa(database.AUTH.getCurrentUser(), sNome);
+                    test = true;
+
+                }
+                return true;
+            }
+        });
+
 
 
     }

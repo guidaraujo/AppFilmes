@@ -6,17 +6,25 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="horizontal"
-    android:padding="15dp">
+
+    android:paddingTop="15dp"
+    android:paddingRight="15dp"
+    android:paddingBottom="15dp"
+    >
+
 
     <ImageView
         android:id="@+id/imgCapa"
-        android:layout_width="wrap_content"
+        android:layout_width="163dp"
         android:layout_height="62dp"
+        android:scaleType="fitStart"
         android:layout_weight="1"
-        tools:srcCompat="@tools:sample/avatars" />
+        tools:srcCompat="@drawable/placeholder"
+
+        />
 
     <LinearLayout
-        android:layout_width="315dp"
+        android:layout_width="255dp"
         android:layout_height="match_parent"
         android:orientation="vertical">
 

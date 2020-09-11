@@ -20,6 +20,8 @@
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/inputAno"
             android:layout_width="match_parent"
+            android:inputType="textPersonName"
+            android:imeOptions="actionDone"
             android:layout_height="wrap_content"
             android:hint="Ano " />
     </com.google.android.material.textfield.TextInputLayout>
@@ -38,6 +40,8 @@
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/inputGenero"
             android:layout_width="match_parent"
+            android:inputType="textPersonName"
+            android:imeOptions="actionNext"
             android:layout_height="wrap_content"
             android:hint="Gênero" />
     </com.google.android.material.textfield.TextInputLayout>
@@ -57,6 +61,8 @@
             android:id="@+id/inputNomeFilme"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Nome do Filme" />
+            android:hint="Nome do Filme"
+            android:inputType="textPersonName"
+            android:imeOptions="actionNext"/>
     </com.google.android.material.textfield.TextInputLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
