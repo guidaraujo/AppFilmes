@@ -1,4 +1,4 @@
-package com.example.listadefilmesapp.activity;
+package com.example.listadefilmesapp.view;
 
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -6,7 +6,7 @@ import android.os.Bundle;
 
 import com.example.listadefilmesapp.R;
 import com.example.listadefilmesapp.adapter.AdapterFilmes;
-import com.example.listadefilmesapp.firebase.ConfigDatabase;
+import com.example.listadefilmesapp.database.ConfigDatabase;
 import com.example.listadefilmesapp.model.Filmes;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.auth.FirebaseUser;
@@ -24,7 +24,6 @@ import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.os.Handler;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -215,8 +214,6 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-
-
         switch (item.getItemId()) {
 
             case R.id.sair:
@@ -224,7 +221,6 @@ public class MainActivity extends AppCompatActivity {
                 alertDialogSair();
 
                 break;
-
         }
 
         return super.onOptionsItemSelected(item);

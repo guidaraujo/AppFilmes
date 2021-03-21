@@ -1,4 +1,4 @@
-package com.example.listadefilmesapp.firebase;
+package com.example.listadefilmesapp.database;
 
 import android.util.Log;
 

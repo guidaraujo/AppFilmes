@@ -1,11 +1,10 @@
-package com.example.listadefilmesapp.activity;
+package com.example.listadefilmesapp.view;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
-import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -13,7 +12,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.listadefilmesapp.R;
-import com.example.listadefilmesapp.firebase.ConfigDatabase;
+import com.example.listadefilmesapp.database.ConfigDatabase;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.textfield.TextInputEditText;
@@ -66,10 +65,10 @@ public class LoginActivity extends AppCompatActivity {
     /** Método para realzar o login, recebendo email e senha digitados com parâmetros **/
     public void login(String email, String senha) {
 
-        configDatabase = new ConfigDatabase();
+        //configDatabase = new ConfigDatabase();
 
         /** Realiza o login com email e senha **/
-        configDatabase.AUTH.signInWithEmailAndPassword(email, senha).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+        ConfigDatabase.AUTH.signInWithEmailAndPassword(email, senha).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
 

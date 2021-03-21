@@ -1,4 +1,4 @@
-package com.example.listadefilmesapp.activity;
+package com.example.listadefilmesapp.view;
 
 import android.content.Context;
 import android.view.GestureDetector;

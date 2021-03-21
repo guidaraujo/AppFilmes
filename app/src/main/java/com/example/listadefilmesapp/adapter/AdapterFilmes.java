@@ -16,22 +16,28 @@ import java.util.List;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-/** Classe de adapter que extende a subclasse MyViewHolder **/
+/**
+ * Classe de adapter que extende a subclasse MyViewHolder
+ **/
 public class AdapterFilmes extends RecyclerView.Adapter<AdapterFilmes.MyViewHolder> {
 
-    private static final String DEFAULT_IMAGE= "https://www.meirellesmilare.com.br/wp-content/themes/cardinal/images/default-thumb.png";
+    private static final String DEFAULT_IMAGE = "https://www.meirellesmilare.com.br/wp-content/themes/cardinal/images/default-thumb.png";
 
     private Context context;
 
     List<Filmes> filmeslista;
 
-    /** Construtor da classe AdapterFilmes que recebe uma lista do tipo filmes e o context **/
+    /**
+     * Construtor da classe AdapterFilmes que recebe uma lista do tipo filmes e o context
+     **/
     public AdapterFilmes(List<Filmes> lista, Context c) {
         this.filmeslista = lista;
         this.context = c;
     }
 
-    /** Subclase MyViewHolder que cria o ViewHolder e retorna o layout do adapter_filmes **/
+    /**
+     * Subclase MyViewHolder que cria o ViewHolder e retorna o layout do adapter_filmes
+     **/
     @NonNull
     @Override
     public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -42,21 +48,21 @@ public class AdapterFilmes extends RecyclerView.Adapter<AdapterFilmes.MyViewHold
         return new MyViewHolder(layout);
     }
 
-    /** Ao exibir o recyclerView, cada item recebe o seu correspondente da lista, através do int position **/
+    /**
+     * Ao exibir o recyclerView, cada item recebe o seu correspondente da lista, através do int position
+     **/
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
 
         Filmes filmes = filmeslista.get(position);
 
-        if (filmes.url==null){
+        if (filmes.url == null || filmes.url.equals("")) {
 
             Picasso.get()
                     .load(DEFAULT_IMAGE)
                     .into(holder.capa);
 
         }
-
-
 
         Picasso.get().load(filmes.getUrl()).resize(864, 1280).into(holder.capa);
         holder.titulo.setText(filmes.getTitulo());
@@ -65,7 +71,9 @@ public class AdapterFilmes extends RecyclerView.Adapter<AdapterFilmes.MyViewHold
 
     }
 
-    /** Retorna a quantidade de itens, pegando o tamanho da lista **/
+    /**
+     * Retorna a quantidade de itens, pegando o tamanho da lista
+     **/
     @Override
     public int getItemCount() {
         return this.filmeslista.size();
